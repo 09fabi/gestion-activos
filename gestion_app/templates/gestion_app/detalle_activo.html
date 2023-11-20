@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/cards.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/buttons.css' %}?v=2">
+    <title>{% block title %}Detalle{% endblock %}</title>
+</head>
+<header>
+    <nav class="main-nav">
+        <div class="container-nav">
+            <div class="nav-logo">
+                <img src="{% static 'assets/logo.png' %}" width="60px" alt="Descripción de la imagen">
+            </div>
+            <div class="nav-items">
+                <button class="a"><a href="{% url 'home' %}">Inicio</a></button>
+                <button class="a"><a href="{% url 'activos' %}">Activos</a></button>
+                <button class="a"><a href="{% url 'reports' %}">Reportes</a></button>
+            </div>
+        </div>
+    </nav>
+</header>
+<body>
+</body>
+
+</html>

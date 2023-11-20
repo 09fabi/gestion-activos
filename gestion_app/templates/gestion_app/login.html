@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/buttons.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <title>Login</title>
+</head>
+<body>
+  <img src="{% static 'assets/logo.png' %}" width="60px" alt="logo">
+    <div class="login-box">
+        <p style="margin-bottom: 80px; margin-left: 17px;">INGRESAR</p>
+        <form method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+          <div class="user-box">
+            <input required="" name="username" type="text">
+            <label>Usuario</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="password" type="password">
+            <label>Contraseña</label>
+          </div>
+          <button type="submit" class="login-button">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Entrar
+          </button>
+        </form>
+        <p style="margin-left: 40px; margin-top: 50px;">Olvidaste tu contraseña? <a href="" class="a2">Haz click aquí!</a></p>
+      </div>
+</body>
+</html>

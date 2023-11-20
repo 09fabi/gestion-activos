@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=2">
+    <title>Panel de Administrador</title>
+</head>
+<header>
+    <nav class="main-nav">
+        <div class="container-nav">
+            <div class="nav-logo">
+                <img src="{% static 'assets/logo.png' %}" width="60px" alt="Descripción de la imagen">
+            </div>
+            <div class="nav-items">
+                <button class="a"><a href="{% url 'home' %}">Inicio</a></button>
+                <button class="a"><a href="{% url 'activos' %}">Activos</a></button>
+                <button class="a"><a href="{% url 'reports' %}">Reportes</a></button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+    {% load static %}
+    <div class="admin-container">
+        <div class="admin-panel">
+            <h1 class="admin-h1">Panel de Administrador</h1>
+            <button onclick="loadContent('perfil')">Mis Perfil</button>
+            <hr>
+            <button onclick="loadContent('administrar_usuarios')">Administrar Usuarios</button>
+            <hr>
+            <button onclick="loadContent('listar_usuarios')">Listar Usuarios</button>
+            <hr>
+            <button onclick="loadContent('crear_usuario')">Crear Nuevo Usuario</button>
+            <hr>
+            <button onclick="loadContent('administrar_activos')">Administrar Activos</button>
+            <hr>
+            <button onclick="loadContent('administrar_reportes')">Administrar Reportes</button>
+        </div>
+        <div class="admin-content">
+            <div id="content-container">
+            </div>
+        </div>
+    </div>
+    <script>
+        function loadContent(option) {
+            const contentContainer = document.getElementById('content-container');
+            contentContainer.innerHTML = `<p>Contenido para ${option}</p>`;
+        }
+    </script>
+
+</body>
+
+</html>
